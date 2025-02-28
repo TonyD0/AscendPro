@@ -1,0 +1,471 @@
+/*  Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-family: "Bad Script", cursive;
+}
+
+/* Estilos del Título */
+.titulo {
+    font-size: clamp(40px, 8vw, 80px);
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+}
+
+/*  Fondo de la Aplicación */
+body {
+    background: linear-gradient(to right, #1a1a40, #3a2d80, #24243e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/*  Contenedor Principal */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/*  Estilos de la Tarjeta */
+.card {
+    width: 650px;
+    height: auto;
+    border-radius: 80px;
+    padding: 50px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    background-image: linear-gradient(144deg, #0a9650, #5B42F3 75%, #0a9650);
+}
+
+.card-body {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 10px;
+}
+
+/*  Personaliza la barra de scroll */
+.card-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.card-body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.card-body::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #00ff88, #00ffcc);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.card-body::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(70deg, #3b82f6, #9333ea);
+}
+
+/*  Scroll en Firefox */
+.card-body {
+    scrollbar-width: thin;
+    scrollbar-color: #00ff88 rgba(0, 0, 0, 0.5);
+}
+
+
+.card__content {
+    background: rgb(5, 6, 45);
+    border-radius: 17px;
+    width: 100%;
+    height: 100%;
+}
+
+/*  Estilos del Input */
+.input {
+    color: black;
+    border: 2px solid #8707ff;
+    border-radius: 100px;
+    padding: 15px 35px;
+    background: #ede2fb;
+    max-width: 100%;
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    word-wrap: break-word;
+}
+
+.input:focus {
+    box-shadow: 0px 0px 10px #8707ff;
+    border-color: #ff00ff;
+}
+
+/*  Botón Guardar */
+.btn-save {
+    background: linear-gradient(90deg, #7345f9, #b245f9);
+    border: none;
+    border-radius: 100px;
+    padding: 12px 25px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(135, 7, 255, 0.5);
+}
+
+.btn-save:hover {
+    background: linear-gradient(10deg, #ff00ff, #ff4d4d);
+    box-shadow: 0px 8px 20px rgba(255, 0, 255, 0.6);
+    transform: scale(1.05);
+}
+
+/*  Contenedor de la Lista */
+.task-container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/*  Lista de Tareas */
+.list-group {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+}
+
+/*  Tarjeta de Tarea */
+.list-group-item {
+    width: 100%;
+    max-width: 500px;
+    min-height: 100px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 8px 25px rgba(0, 255, 136, 0.4);
+    border: 2px solid rgba(0, 255, 136, 0.6);
+    transition: all 0.3s ease-in-out;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/*  Mostrar Tipo de Objetivo y Enfoque */
+.task-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.task-category {
+    color: #ffdd57;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.task-priority {
+    color: #ff8888;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/*  Selectores de Tipo de Objetivo y Enfoque */
+.categoria-label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+}
+
+select.input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 100px;
+    border: 2px solid #8707ff;
+    background: #ede2fb;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+select.input:focus {
+    box-shadow: 0px 0px 10px #8707ff;
+    border-color: #ff00ff;
+}
+
+/* Asegurar que los botones de acción estén bien alineados */
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    min-width: 80px;
+}
+
+/*  Ajuste del checkbox */
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border: 2px solid rgba(0, 255, 136, 0.7);
+    background: rgba(0, 255, 136, 0.2);
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+/*  Ocultar checkbox original */
+.checkbox-wrapper input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/*  Icono del check (SVG) */
+.checkbox-wrapper svg {
+    width: 20px;
+    height: 20px;
+    stroke: #00ff88;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/*  Activar check cuando se hace clic */
+.checkbox-wrapper input:checked ~ .checkmark svg {
+    opacity: 1;
+}
+
+
+/*  Botón de Eliminar */
+
+.bin-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33px;
+    height: 30px;
+    border-radius: 12px;
+    background-color: rgb(255, 95, 95);
+    cursor: pointer;
+    border: 2px solid rgb(255, 201, 201);
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/*  Parte inferior del icono de eliminar */
+.bin-bottom {
+    width: 12px;
+}
+
+/*  Parte superior del icono (efecto de tapa de bote) */
+.bin-top {
+    width: 14px;
+    transform-origin: right;
+    transition-duration: 0.3s;
+}
+
+/*  Efecto de animación cuando se pasa el mouse */
+.bin-button:hover .bin-top {
+    transform: rotate(45deg);
+}
+
+/*  Cambia el color a rojo más intenso cuando se pasa el mouse */
+.bin-button:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+/*  Efecto de escala al presionar */
+.bin-button:active {
+    transform: scale(0.9);
+}
+
+/*  Ajusta el contenedor de los botones */
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* Asegura que el ícono del delete sea visible */
+.deleteButton svg {
+    width: 100%;
+    height: 100%;
+}
+
+/*  Efecto hover para cambiar a rojo */
+.deleteButton:hover {
+    background-color: rgba(255, 0, 0, 0.7);
+    transform: scale(1.1);
+
+/*  Responsive */
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .task-text {
+        font-size: 14px;
+    }
+}
+
+/* 🔹 Estilo del botón de edición */
+.editButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    height: 40px;
+    width: 40px;
+    border: none;
+    background: #a549da3d;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+/* 🔹 Animación al pasar el mouse */
+.editButton:hover {
+    background: #a549da62;
+}
+
+.editButton:hover .svg-icon {
+    animation: lr 0.5s linear infinite;
+}
+
+/* 🔹 Estilo del icono */
+.svg-icon {
+    height: 24px;
+    width: 24px;
+    stroke: #A649DA;
+}
+
+/* 🔹 Animación del botón */
+@keyframes lr {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-1px);
+    }
+    75% {
+        transform: translateX(1px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+
+/* 🔹 Botón de cancelar */
+.btn-cancel {
+    background: linear-gradient(90deg, #ff4d4d, #ff1a1a);
+    border: none;
+    border-radius: 100px;
+    padding: 12px 25px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    width: auto;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.5);
+}
+
+/* 🔹 Efecto hover */
+.btn-cancel:hover {
+    background: linear-gradient(10deg, #ff0000, #b30000);
+    box-shadow: 0px 8px 20px rgba(255, 0, 0, 0.6);
+    transform: scale(1.05);
+}
+/* 🔹 Estilos del Formulario de Registro */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 255, 136, 0.3);
+}
+
+/* 🔹 Estilos del Título */
+#heading {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* 🔹 Estilos de los Campos de Entrada */
+.field {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 10px;
+    background: #252525;
+    color: white;
+    box-shadow: inset 2px 5px 10px rgba(0, 255, 136, 0.2);
+}
+
+.input-field {
+    border: none;
+    outline: none;
+    width: 100%;
+    background: none;
+    color: #d3d3d3;
+    font-size: 16px;
+}
+
+/* 🔹 Botón de Registro */
+.button1 {
+    padding: 12px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #00ff75, #3700ff);
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.button1:hover {
+    background: linear-gradient(90deg, #00cc60, #2a00d3);
+    box-shadow: 0px 5px 15px rgba(0, 255, 136, 0.5);
+}
