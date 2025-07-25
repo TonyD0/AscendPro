@@ -36,23 +36,26 @@ AscendPro es una aplicación web que fusiona la **gestión de tareas** con **gam
 - **Otros:** Git · GitHub
 
 ---
-## 🚀 Instalación rápida ##
+## 🚀 Instalación rápida
 
-## Clona el repositorio:
+1. Clona el repositorio:  
+`git clone https://github.com/TonyD0/AscendPro.git`  
+`cd AscendPro`
 
-git clone https://github.com/TonyD0/AscendPro.git
-cd AscendPro
+2. Crea un entorno virtual e instala las dependencias:  
+En Linux/Mac:  
+`python -m venv venv`  
+`source venv/bin/activate`  
+En Windows:  
+`venv\Scripts\activate`  
+Luego ejecuta:  
+`pip install -r requirements.txt`
 
+3. Ejecuta la aplicación:  
+`python main.py`
 
-## Crea un entorno virtual e instala dependencias:
-
--python -m venv venv
--source venv/bin/activate  # o venv\Scripts\activate en Windows
--pip install -r requirements.txt
--Ejecuta la aplicación:
-    -python main.py
--Accede desde tu navegador:
-http://127.0.0.1:5000/
+4. Abre tu navegador y accede a:  
+[http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
 
 
